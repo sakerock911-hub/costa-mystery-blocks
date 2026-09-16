@@ -1,0 +1,49 @@
+/* The front cover of Costa's private field journal. */
+[hidden]{display:none!important}
+.title-screen{position:relative;isolation:isolate;min-height:100svh;overflow:hidden;background:linear-gradient(180deg,#040b0de6 0%,#040b0d70 20%,#040b0d0a 38%,#040b0d26 57%,#04090cce 80%,#04090cf5 100%),url('./assets/uma-title-crowd.png') center 42%/cover no-repeat;color:#efe1c5;padding:24px 28px 18px;display:flex;flex-direction:column;align-items:center}
+.title-screen::before{content:'';position:absolute;inset:12px;border:1px solid #b08a4d50;pointer-events:none;z-index:-1}
+.title-masthead{width:100%;max-width:1080px;display:flex;align-items:center;justify-content:space-between;gap:14px;color:#c1a879;font-size:.7rem;letter-spacing:.16em}
+.title-seal{display:flex;align-items:center;gap:9px}.title-seal img{width:32px;height:32px;object-fit:contain}
+.title-edition{border:1px solid #986b47;padding:6px 9px;white-space:nowrap;color:#d8b58b;letter-spacing:.07em}
+.title-content{width:min(100%,880px);margin:auto;text-align:center;padding:27px 0 24px}
+.title-kicker{margin:0 0 16px;color:#ba9d6c;font-size:.7rem;letter-spacing:.26em}
+.title-heading{font-family:'Yu Mincho','Hiragino Mincho ProN',serif;line-height:1.35;margin:0;color:#f5e3bd;text-shadow:0 3px 28px #000,0 0 45px #ad783228;letter-spacing:.07em;font-weight:900}
+.title-heading>span{display:block;font-size:clamp(1.1rem,2.6vw,1.6rem);letter-spacing:.26em;margin-bottom:7px;color:#e2c590}
+.title-heading>strong{font-size:clamp(1.8rem,5.8vw,3.65rem);font-weight:900;display:block}
+.title-rule{display:flex;align-items:center;justify-content:center;gap:16px;font-family:Georgia,serif;font-size:.63rem;letter-spacing:.32em;color:#b08b57;margin:15px auto 0;max-width:590px}
+.title-rule::before,.title-rule::after{content:'';height:1px;flex:1;background:linear-gradient(90deg,transparent,#9e7747)}.title-rule::after{transform:rotate(180deg)}
+.title-stage{position:relative;height:235px;margin:4px auto 0;max-width:700px;pointer-events:none;isolation:isolate}
+.title-stage::before{content:'';position:absolute;inset:0 15%;background:radial-gradient(ellipse,#ab925d25,transparent 65%);z-index:-1}
+.title-costa-portrait{position:relative;height:235px;width:180px;object-fit:contain;filter:drop-shadow(0 12px 18px #000b);z-index:2;animation:title-float 6s ease-in-out infinite}
+.title-apparition{position:absolute;top:25px;width:195px;height:195px;opacity:.67;filter:sepia(.35) saturate(.55);background:transparent;mask-image:radial-gradient(ellipse,#000 25%,transparent 71%)}
+.title-apparition.left{left:2%;transform:rotate(-9deg)}.title-apparition.right{right:2%;transform:rotate(9deg)}
+.title-coordinate{position:absolute;bottom:28px;font-family:Georgia,serif;color:#9d8e70;font-size:.65rem;letter-spacing:.18em;opacity:.8}.title-coordinate.left{left:9%}.title-coordinate.right{right:9%}
+/* The crowd artwork replaces the two isolated background apparitions. */
+.title-apparition,.title-coordinate{display:none}
+.title-invitation{font-family:'Yu Mincho','Hiragino Mincho ProN',serif;font-size:1.02rem;letter-spacing:.12em;line-height:1.8;margin:0 0 19px;color:#e3cba2}
+.investigate-button{display:flex;justify-content:center;align-items:center;gap:20px;position:relative;width:min(100%,340px);min-height:67px;margin:0 auto;border:1px solid #d3aa60;border-radius:3px;background:linear-gradient(120deg,#76532b,#af8240 52%,#785229);color:#fff1d4;box-shadow:0 0 0 4px #100c0c,0 0 0 5px #99764670,0 7px 28px #0009,inset 0 1px #efd39c60;font-family:'Yu Mincho','Hiragino Mincho ProN',serif;font-size:1.5rem;font-weight:800;letter-spacing:.1em;transition:filter .2s,transform .2s}
+.investigate-button:hover{filter:brightness(1.17);transform:translateY(-2px)}.investigate-button:active{transform:translateY(1px)}.investigate-button>svg{width:23px;height:23px}.investigate-button:disabled{filter:brightness(1.15)}
+.title-resume{margin:15px 0 0;min-height:20px;color:#bfae91;font-size:.76rem;line-height:1.6}.title-record{display:flex;justify-content:center;align-items:center;gap:22px;font-size:.72rem;color:#af9874;margin:9px 0 0}.title-record b{font-weight:500;font-family:Georgia,serif;color:#e0c291;font-size:1rem;margin-left:5px}
+.title-soundbar{width:min(100%,850px);display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px 24px;border-top:1px solid #94754a50;padding-top:15px;font-size:.75rem;color:#c3b49b}
+.title-sound-choice{display:flex;align-items:center;gap:8px;cursor:pointer;line-height:1.8}.title-sound-choice input{width:17px;height:17px;accent-color:#be9657;margin:0}.title-radio{display:flex;gap:10px;align-items:center}.title-radio button{background:#1b1714;border:1px solid #826b49;border-radius:3px;padding:9px 13px;min-width:103px;font-size:.75rem}.title-radio button:hover{background:#3a2c1c}.title-radio button[aria-pressed=true]{color:#e7c784;border-color:#bd9356}.title-soundbar .music-volume{display:flex;align-items:center;gap:8px}.title-soundbar input[type=range]{width:86px;accent-color:#cda465}.title-audio-status{margin:10px 0 0;text-align:center;font-size:.7rem;min-height:20px;line-height:1.65;color:#aa987a}
+.title-screen.entering{animation:title-depart .65s ease-in forwards;pointer-events:none}.title-screen.entering .title-costa-portrait{animation:none}.title-screen.entering .investigate-button{background:#bc965b}
+#game-screen.arriving{animation:game-arrive .55s ease-out both}.title-return{white-space:nowrap}
+@keyframes title-float{50%{transform:translateY(-6px)}}
+@keyframes title-depart{to{opacity:0;transform:scale(1.025);filter:blur(5px)}}
+@keyframes game-arrive{from{opacity:0}to{opacity:1}}
+@media(min-width:1500px) and (min-height:950px){.title-stage{height:300px;max-width:790px}.title-costa-portrait{height:300px;width:215px}.title-apparition{width:240px;height:240px;top:30px}.title-heading>strong{font-size:4.2rem}}
+@media(max-width:600px){.title-screen{padding:20px 22px 16px}.title-screen::before{inset:8px}.title-masthead{font-size:.58rem;letter-spacing:.03em;gap:8px}.title-seal{gap:5px}.title-seal img{width:25px;height:25px}.title-edition{padding:5px 7px;font-size:.6rem}.title-content{padding:26px 0 23px}.title-kicker{font-size:.6rem;letter-spacing:.12em;margin-bottom:14px}.title-heading{letter-spacing:.01em}.title-heading>strong{font-size:clamp(1.53rem,6.7vw,2.4rem)}.title-heading>span{font-size:1.05rem}.title-rule{font-size:.49rem;gap:10px;letter-spacing:.17em}.title-stage{height:195px;margin-top:10px}.title-costa-portrait{height:195px;width:137px}.title-apparition{width:135px;height:135px;top:26px;opacity:.6}.title-apparition.left{left:-27px}.title-apparition.right{right:-27px}.title-coordinate{bottom:22px;font-size:.48rem;letter-spacing:.03em}.title-coordinate.left{left:0}.title-coordinate.right{right:0}.title-invitation{font-size:.86rem;letter-spacing:.06em}.investigate-button{width:min(94%,315px);min-height:62px;font-size:1.4rem}.title-soundbar{gap:9px 18px;padding-top:12px}.title-sound-choice{width:100%;justify-content:center;font-size:.72rem}.title-audio-status{font-size:.64rem}.title-record{gap:20px}.title-return{font-size:.72rem}}
+#game-screen .topbar{height:auto;min-height:56px;padding-block:8px;border-bottom:0}
+#game-screen .topbar>.brand,#game-screen .top-actions .prototype{display:none}
+#game-screen .top-actions{margin-left:auto}
+@media(max-width:620px){
+  .title-screen{padding-top:14px;background-position:center top}
+  .title-masthead{display:none}
+  .title-content{margin:0 auto;padding-top:12px}
+  #game-screen .topbar{height:auto;min-height:46px;padding:6px 15px;flex-wrap:wrap;gap:6px 12px;border-bottom:0}
+  #game-screen .topbar>.brand{display:none}
+  #game-screen .top-actions{margin-left:auto;gap:7px}
+  #game-screen .top-actions .icon-button{width:32px;height:32px}
+  #game-screen .top-actions .icon-button svg{width:17px;height:17px}
+}
+@media(prefers-reduced-motion:reduce){.title-costa-portrait,.title-screen.entering,#game-screen.arriving{animation:none}.investigate-button{transition:none}}

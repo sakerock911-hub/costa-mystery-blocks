@@ -1,0 +1,16 @@
+export const SIZE=8;
+export const COLORS=['mint','purple','red','yellow','blue'];
+export const SYMBOLS={mint:'✦',purple:'◇',red:'•',yellow:'✧',blue:'⊙'};
+export const MOTIFS={mint:'UFO',purple:'グレイ',red:'モスマン',yellow:'UMAの足跡',blue:'UFO'};
+const SHAPES=[[[0,0]],[[0,0],[0,1]],[[0,0],[1,0]],[[0,0],[0,1],[0,2]],[[0,0],[1,0],[2,0]],[[0,0],[0,1],[1,0],[1,1]],[[0,0],[0,1],[0,2],[0,3]],[[0,0],[1,0],[2,0],[3,0]],[[0,0],[1,0],[1,1]],[[0,1],[1,0],[1,1]],[[0,0],[0,1],[1,0]],[[0,0],[0,1],[1,1]],[[0,0],[1,0],[2,0],[2,1]],[[0,1],[1,1],[2,0],[2,1]],[[0,0],[0,1],[0,2],[1,1]],[[0,0],[0,1],[1,1],[1,2]],[[0,1],[0,2],[1,0],[1,1]],[[0,0],[0,1],[1,0],[1,1],[2,0],[2,1]],[[0,0],[0,1],[0,2],[1,0],[1,1],[1,2]],[[0,0],[0,1],[0,2],[1,0],[1,1],[1,2],[2,0],[2,1],[2,2]],[[0,0],[0,1],[0,2],[0,3],[0,4]]];
+export {FILES} from './catalog.mjs';
+export const emptyBoard=()=>Array(64).fill(null);
+export function initialBoard(){const b=emptyBoard();for(let c=0;c<5;c++)b[56+c]='red';for(const i of [40,41,48,49])b[i]='mint';for(const i of [46,47,54,55])b[i]='purple';return b;}
+export function makePiece(cells,color){return {cells:cells.map(p=>[...p]),color,width:Math.max(...cells.map(p=>p[1]))+1,height:Math.max(...cells.map(p=>p[0]))+1};}
+export function canPlace(board,piece,row,col){if(!piece||!Number.isInteger(row)||!Number.isInteger(col)||row<0||col<0||row+piece.height>SIZE||col+piece.width>SIZE)return false;return piece.cells.every(([r,c])=>!board[(row+r)*SIZE+col+c]);}
+export function findMoves(board,piece){if(!piece)return[];const moves=[];for(let row=0;row<=SIZE-piece.height;row++)for(let col=0;col<=SIZE-piece.width;col++)if(canPlace(board,piece,row,col))moves.push({row,col});return moves;}
+export function initialPieces(){return[makePiece(SHAPES[3],'red'),makePiece(SHAPES[5],'mint'),makePiece(SHAPES[8],'purple')];}
+export function getFullLines(board){const rows=[],cols=[],indices=new Set();for(let n=0;n<SIZE;n++){if(Array.from({length:SIZE},(_,i)=>board[n*SIZE+i]).every(Boolean))rows.push(n);if(Array.from({length:SIZE},(_,i)=>board[i*SIZE+n]).every(Boolean))cols.push(n);}for(const r of rows)for(let c=0;c<SIZE;c++)indices.add(r*SIZE+c);for(const c of cols)for(let r=0;r<SIZE;r++)indices.add(r*SIZE+c);return{rows,cols,indices:[...indices],count:rows.length+cols.length};}
+export function placePiece(board,piece,row,col,previousCombo=0){if(!canPlace(board,piece,row,col))return null;const placed=[...board];const occupied=piece.cells.map(([r,c])=>(row+r)*SIZE+col+c);occupied.forEach(i=>placed[i]=piece.color);const lines=getFullLines(placed);const next=[...placed];lines.indices.forEach(i=>next[i]=null);const combo=lines.count?previousCombo+1:0;const points=piece.cells.length*10+Math.round(100*lines.count**2*(1+Math.max(0,combo-1)*.25));return{board:next,placed,occupied,lines,combo,points};}
+export function generatePieces(board,rng=Math.random){const pieces=Array.from({length:3},()=>makePiece(SHAPES[Math.floor(rng()*SHAPES.length)],COLORS[Math.floor(rng()*COLORS.length)]));if(!pieces.some(p=>findMoves(board,p).length)){const choices=SHAPES.map(s=>makePiece(s,COLORS[Math.floor(rng()*COLORS.length)])).filter(p=>findMoves(board,p).length);if(choices.length)pieces[0]=choices[Math.floor(rng()*choices.length)];}return pieces;}
+export function hasAnyMove(board,pieces){return pieces.some(p=>findMoves(board,p).length>0);}

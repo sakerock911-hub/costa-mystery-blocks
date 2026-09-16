@@ -1,0 +1,59 @@
+/* Costa's own investigation desk: classified records, anomalous signals and discoveries. */
+.game-layout{max-width:1220px;grid-template-columns:minmax(192px,240px) minmax(330px,460px) minmax(190px,240px);justify-content:center}
+.topbar{height:86px}.game-heading>p{font-size:.875rem;line-height:1.6}.game-heading h1{font-size:1.5rem}.expedition,.field-guide{padding-top:16px}.game-layout{margin-top:22px}
+.archive-art{background-repeat:no-repeat;background-size:500% 500%;background-color:#141211;isolation:isolate}
+.mission-art{max-height:none;margin:14px auto 18px;box-shadow:inset 0 0 25px #0008;filter:none}.mission-body>p{font-size:.875rem}.mission-body h2{font-size:1.15rem}.mission-progress-title{font-size:.875rem;flex-wrap:wrap}.mission-card>.eyebrow{font-size:.8125rem}
+.research-strip{display:flex;gap:10px;align-items:center;padding:10px 12px;border:1px solid #a9854c;background:linear-gradient(110deg,#322315,#17120edb);margin-bottom:13px;box-shadow:inset 3px 0 #b89254;min-width:0}
+.research-strip>img{border-radius:50%;flex:none}.research-strip>div{min-width:0}.research-strip strong{display:block;font-family:'Yu Mincho','Hiragino Mincho ProN',serif;font-size:1rem;color:#f1d29b;line-height:1.5}.research-strip>div>span{display:block;font-size:.8125rem;line-height:1.5;color:#d5c2a2}.research-value{margin-left:auto;white-space:nowrap;font-size:.8125rem;color:#d2b68b}.research-value b{display:block;font-family:Georgia,serif;font-size:1.4rem;color:#fff0c9;text-align:right}
+.cell.clue{background:radial-gradient(circle,#cea44460,#30281d90)!important;border-color:#d6ac69;box-shadow:inset 0 0 10px #efbc3845}
+.cell.clue::before{content:'?';display:grid;place-items:center;position:absolute;inset:17%;border:1px solid #eac27d99;border-radius:50%;color:#ffe9b6;font-family:Georgia,serif;font-size:clamp(1rem,2.4vw,1.5rem);font-weight:bold;z-index:3;pointer-events:none;animation:signal-pulse 2.8s ease-in-out infinite}
+.cell.clue.preview::before{inset:auto -2px -2px auto;width:17px;height:17px;font-size:13px;background:#24190d;color:#ffe2a0;animation:none}
+.board-frame{box-shadow:0 7px 0 #0c0907,0 17px 38px #0009,inset 0 1px 0 #bfa36b80}.board::before{opacity:.23}.move-message{font-size:.875rem;line-height:1.6;min-height:48px}
+.archive-progress{margin:0 0 16px;font-size:.8125rem;color:#c8b58f}.archive-progress>div{height:5px;background:#3b2d1e;margin-top:9px}.archive-progress i{display:block;height:100%;width:0;background:#d2ac67;transition:width .4s}
+.collection-image{filter:none}.collection-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.collection-title{font-size:.875rem}.collection-meta{min-height:72px}.collection-card.locked .collection-image{filter:brightness(.23) saturate(.2)}.collection-count{white-space:nowrap}.guide-heading h2{line-height:1.6;flex-wrap:wrap}
+.research-tally{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:22px;border-block:1px solid #83623f75;padding:14px 0;font-size:.875rem;color:#c8b491}.research-tally strong{white-space:nowrap;color:#f0d7a7}.research-tally b{font-size:1.25rem;font-family:Georgia,serif}.local-note{font-size:.875rem;line-height:1.8}.record-button{display:block;margin-top:12px;background:transparent;color:#e5cda3;border-bottom:1px solid #b89151;padding:9px 0;font-size:.875rem;min-height:44px}.record-button:hover{color:#fff2d7}
+.guide-modal{width:min(920px,calc(100% - 28px));padding:30px}.guide-controls{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:12px;margin:20px 0}.guide-controls label{display:flex;flex-direction:column;gap:7px;font-size:.875rem;color:#d9c3a0;min-width:0}.guide-controls select,.guide-controls input{font:inherit;min-width:0;width:100%;padding:10px;color:#f4e0bc;border:1px solid #957343;background:#17130f;border-radius:3px;min-height:44px}.guide-controls input:focus-visible,.guide-controls select:focus-visible{outline:2px solid #e7bf78;outline-offset:2px}.guide-entries{grid-template-columns:repeat(3,minmax(0,1fr))}.guide-entry-art{aspect-ratio:1;filter:none}.guide-entry-text{padding:14px}.guide-entry h3{font-size:1rem;line-height:1.55;margin:8px 0}.guide-entry p{font-size:.875rem;line-height:1.8}.guide-entry .unlock-at{font-size:.8125rem}.guide-entry.locked .guide-entry-art{filter:brightness(.18) saturate(.2)}.rarity{display:inline-block;font-size:.75rem;color:#e9ba71;border:1px solid #9b713c;padding:2px 6px;margin-bottom:9px}.guide-pagination{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:22px}.guide-pagination button{width:auto;min-width:75px;margin:0;padding:11px}.guide-pagination button:disabled{opacity:.35;cursor:default}.guide-pagination span{font-size:.875rem;color:#dfc499;text-align:center}.guide-empty{grid-column:1/-1;padding:25px 0}.fiction-note{font-size:.8125rem!important;line-height:1.8!important}
+.discovery-modal{position:relative;width:min(470px,calc(100% - 32px));padding:26px;text-align:center;overflow:auto}.discovery-modal>.eyebrow{justify-content:center;font-size:.75rem;letter-spacing:.12em}.discovery-image{width:min(240px,80%);aspect-ratio:1;margin:16px auto 18px;border:1px solid #927143;box-shadow:0 0 25px #b07b3b20}.discovery-stamp{position:absolute;right:24px;top:65px;border:4px double #e48161;padding:6px 13px;color:#f49d7a;transform:rotate(12deg);font-family:serif;font-weight:900;font-size:1.25rem;background:#23110cca}.discovery-modal h2{margin:12px 0 16px;font-size:1.5rem}.discovery-voice{display:flex;gap:12px;align-items:flex-start;text-align:left;padding:14px 0;border-block:1px solid #7c5e3c}.discovery-voice img{border:1px solid #a58048;border-radius:50%;flex:none}.discovery-voice p{margin:0;font-size:.9375rem;line-height:1.8}.discovery-modal #discovery-count{font-size:.875rem;margin-bottom:0}
+.import-label{display:block;margin-top:20px;border:1px solid #987547;padding:14px;font-size:.9375rem;color:#edd3a3}.import-label input{display:block;width:100%;font-size:.875rem;margin-top:13px}.record-note{font-size:.875rem!important}.clue-caught{animation:clue-caught .7s ease-out}
+@keyframes signal-pulse{50%{box-shadow:0 0 12px #edbc5555;opacity:.65}}@keyframes clue-caught{30%{border-color:#ffe2a0;box-shadow:0 0 18px #d7ab4b55}}
+@media(max-width:1080px){.game-layout{grid-template-columns:minmax(175px,210px) minmax(310px,440px) minmax(175px,210px);gap:20px}.game-heading h1{font-size:1.32rem}.research-strip{padding:8px;gap:8px}.research-strip>img{width:36px;height:36px}.research-strip strong{font-size:.9375rem}}
+@media(max-width:900px){.game-layout{grid-template-columns:minmax(310px,440px) minmax(190px,240px);gap:25px}.game-heading h1{font-size:1.4rem}.game-heading>p{font-size:.8125rem}.field-guide{padding-top:12px}}
+@media(max-width:620px){.topbar{height:70px}.game-layout{margin-top:15px;padding-inline:15px}.game-heading{padding-right:60px}.game-heading h1{font-size:1.4rem}.game-heading>p{font-size:.75rem}.mobile-costa{width:59px;height:100px;top:0}.scoreboard{min-height:65px}.mobile-mission{font-size:.8125rem;flex-wrap:wrap;gap:5px 9px}.mobile-mission strong{font-size:.875rem;overflow-wrap:anywhere}.research-strip{padding:9px 10px;margin-bottom:10px}.research-strip>img{width:35px;height:35px}.research-strip strong{font-size:.9375rem}.research-strip>div>span{font-size:.75rem}.research-value b{font-size:1.2rem}.cell.clue::before{font-size:1.15rem}.field-guide{padding-top:18px}.collection-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.collection-title{font-size:.75rem}.collection-meta{min-height:66px}.research-tally{margin-top:16px}.local-note{text-align:left;margin-top:14px}.record-button{margin-inline:auto}.guide-modal{padding:26px 18px}.guide-controls{grid-template-columns:1fr 1fr;gap:10px}.guide-search-label{grid-column:1/-1}.guide-entries{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.guide-entry-text{padding:10px}.guide-entry h3{font-size:.9375rem}.guide-entry p{font-size:.875rem}.guide-pagination{gap:8px}.guide-pagination span{font-size:.8125rem}.guide-pagination button{min-width:66px}.discovery-image{width:180px}.discovery-modal{padding:24px 20px}.discovery-modal h2{font-size:1.25rem}.page-footer{flex-wrap:wrap;gap:8px}}
+@media(max-width:360px){.game-layout{padding-inline:10px}.game-heading h1{font-size:1.25rem}.research-strip{gap:7px}.research-strip>img{width:30px;height:30px}.research-strip strong{font-size:.875rem}.research-strip>div>span{font-size:.75rem}.research-value b{font-size:1.1rem}.collection-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.cell.clue::before,.clue-caught{animation:none}}
+/* Crop raster sprite sheets in nested viewports, preserving illustration proportions. */
+.archive-art{position:relative;background-image:none;overflow:hidden}
+.archive-viewport{position:absolute;inset:0}
+.archive-viewport,.archive-viewport>svg{width:100%;height:100%;display:block;stroke:none;fill:none;overflow:hidden}
+/* Brief feedback leaves more of the puzzle visible. */
+.board-celebration{font-size:1.9rem;letter-spacing:.025em}
+.board-celebration small{font-size:.875rem}
+.board-celebration.show{animation-duration:.7s}
+/* Only the floating piece moves each frame; keep touch tracking free of easing. */
+.drag-ghost{filter:none}
+.drag-ghost.is-dragging{will-change:transform;opacity:.96}
+.drag-ghost .mini-tile{height:var(--drag-cell-height,var(--drag-cell))}
+.piece-slot.drag-source .piece-shape{opacity:.22}
+.play-footer{justify-content:flex-end}
+/* Keep the heading accessible and focusable without taking up screen space. */
+.game-heading{position:absolute;width:1px;height:1px;min-height:0;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.game-heading .mobile-costa{display:none}
+.scoreboard{padding-right:5px}
+@media(min-width:621px){
+  .field-guide>.research-strip{display:grid;grid-template-columns:32px minmax(0,1fr);gap:8px;margin-top:16px;padding:10px}
+  .field-guide>.research-strip>img{width:32px;height:32px}
+  .field-guide>.research-strip strong{font-size:.875rem}
+  .field-guide>.research-strip>div>span{font-size:.8125rem}
+  .field-guide .research-value{grid-column:2;justify-self:end;display:inline-flex;align-items:baseline}
+  .field-guide .research-value b{display:inline;font-size:1.2rem}
+}
+@media(max-width:620px){
+  .game-layout{margin-top:6px}
+  .scoreboard{min-height:54px;padding-right:5px;padding-bottom:10px}
+  .score-main strong{font-size:1.85rem}
+  .best-score strong{font-size:1.05rem}
+  .board-celebration{font-size:1.65rem}
+  .field-guide>.mobile-mission{margin-top:16px}
+  .research-value{display:inline-flex;align-items:baseline;flex:none}
+  .research-value b{display:inline}
+}
